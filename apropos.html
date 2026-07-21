@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>À propos - Belle iledée d'Anais</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <!-- En-tête -->
+    <header>
+        <a href="index.html" class="logo-container">
+            <img src="logo.png" alt="Logo Belle iledée d'Anais">
+        </a>
+        <nav>
+            <a href="index.html">Accueil</a>
+            <a href="apropos.html" class="active">À propos</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+    </header>
+
+    <!-- Contenu À Propos en 3 colonnes -->
+    <div class="about-container">
+        <h2>L'histoire derrière les pièces</h2>
+
+        <div class="about-grid">
+            <!-- Carte 1 -->
+            <div class="about-card">
+                <img src="photos/apropos1.png" alt="L'amour de la mer">
+                <div class="about-card-content">
+                    <h3>L'amour de la mer et de la matière brute</h3>
+                    <p>Tout commence sur les plages, au rythme des marées. Le ramassage de bois flotté, d'oursins et de coquillages est une véritable chasse aux trésors. Chaque élément brut possède son histoire, ses aspérités et sa beauté naturelle.</p>
+                </div>
+            </div>
+
+            <!-- Carte 2 -->
+            <div class="about-card">
+                <img src="photos/apropos2.png" alt="Les Oursins & Le Bois Flotté">
+                <div class="about-card-content">
+                    <h3>Les Oursins & Le Bois Flotté</h3>
+                    <p>Les oursins sont vidés et nettoyés avec une infinie minutie pour conserver toute leur fragilité et leur géométrie parfaite. Mariés à du bois flotté sculpté par les éléments, ils se transforment en luminaires chaleureux.</p>
+                </div>
+            </div>
+
+            <!-- Carte 3 -->
+            <div class="about-card">
+                <img src="photos/apropos3.png" alt="Les Coquilles Saint-Jacques">
+                <div class="about-card-content">
+                    <h3>Les Coquilles Saint-Jacques</h3>
+                    <p>Grâce à une technique de décoration minutieuse, les coquilles Saint-Jacques se parent de motifs délicats qui épousent parfaitement leurs formes, devenant des objets de décoration uniques ou de petits vide-poches.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Pied de page -->
+    <footer>
+        <p>&copy; 2026 Belle iledée d'Anais - Tous droits réservés.</p>
+    </footer>
+
+    <!-- Script JavaScript pour la transition de page -->
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            document.body.classList.add("fade-in");
+        });
+
+        const links = document.querySelectorAll("nav a, header a.logo-container");
+        links.forEach(link => {
+            link.addEventListener("click", function(e) {
+                const targetUrl = this.href;
+                if (targetUrl.includes("#")) return;
+
+                e.preventDefault();
+                document.body.classList.remove("fade-in");
+
+                setTimeout(() => {
+                    window.location.href = targetUrl;
+                }, 400);
+            });
+        });
+    </script>
+
+</body>
+</html>
